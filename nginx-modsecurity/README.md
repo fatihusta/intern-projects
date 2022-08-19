@@ -8,6 +8,6 @@
 
 4. Configure all of things using ansible playbook.Such as nginx.conf or modsecurity.conf.
 
-5. Use 3 of least [OWASP TOP 10](#https://owasp.org/Top10/) for testing on your application.
+5. Use 3 of least [OWASP TOP 10](https://owasp.org/Top10/) for testing on your application.
 
-> Ps: Use our [flask web application project](#https://github.com/fatihusta/intern-projects/tree/main/flask-web-app-project) for this
+> Ps: Use our [flask web application project](https://github.com/fatihusta/intern-projects/tree/main/flask-web-app-project) for this
