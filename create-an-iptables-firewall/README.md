@@ -5,7 +5,7 @@
 
 2- Namespaces are client1, client2, server, firewall
 
-3- Create veth for all namespaces for network communication.
+3- Create veth for all namespaces and your host-to-firewall for network communication.
 
 4- Serve sample http service inside the server namespace
 
@@ -21,6 +21,8 @@
 
 6.4- Client1 doesn't have ping permission to firewall
 
+6.5- Client and server networks are can be access to the internet from firewall namespace via your host machine.
+
 ### Notes
 
 Client1 subnetwork is 192.0.2.0/26
@@ -29,11 +31,29 @@ Client2 subnetwork is 192.0.2.64/26
 
 Server subnetwork is 192.0.2.128/26
 
+Host-To-Firewall Subnetwork is 192.0.2.192/26
+
 Firewall should be a **stateful**.
 
 ### Topology
 ```
-                 ┌─────────────────┐
+                   ┌─────────────┐
+                   │             │
+                   │   Internet  │
+                   │             │
+                   └──────┬──────┘
+                          │
+                          │
+                          │
+               ┌──────────┴──────────┐
+               │                     │
+               │        HOST         │
+               │                     │
+               └──────────┬──────────┘
+                          │
+                          │
+                          │
+                 ┌────────┴────────┐
                  │                 │
                  │    Firewall     ├───────┐
       ┌──────────┤                 │       │
